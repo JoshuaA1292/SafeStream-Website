@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeStream - Window and Gutter Cleaning Service</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9f0f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            width: 80%;
+        }
+        .company-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1a73e8;
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+        .company-name:hover {
+            color: #105cb6;
+        }
+        .book-now-button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-bottom: 20px;
+        }
+        .book-now-button:hover {
+            background-color: #ff4500;
+            transform: scale(1.05);
+        }
+        .form-container {
+            display: none;
+            width: 600px;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s, transform 0.3s;
+            transform: scale(0.95);
+            opacity: 0;
+            margin: auto;
+        }
+        .form-container.show {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #1a73e8;
+            font-size: 24px;
+        }
+        .form-container p {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 16px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 14px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .form-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        .submit-button {
+            text-align: center;
+        }
+        .submit-button button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .submit-button button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="company-name">SafeStream</div>
+    <button class="book-now-button" onclick="showForm()">Book Now</button>
+    <div class="form-container" id="form-container">
+        <h2>Book your SafeStream Consult Today</h2>
+        <p>We will email you back with the details.</p>
+        <form action="https://formsubmit.co/joshuaphilip2140@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="thank-you.html">
+            <div class="form-group">
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="preferred_date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Preferred Time:</label>
+                <input type="time" id="time" name="preferred_time" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="Your address" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email address" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+            </div>
+            <div class="form-group">
+                <label>Services Needed:</label>
+                <div>
+                    <input type="checkbox" id="window_cleaning" name="services[]" value="Window Cleaning">
+                    <label for="window_cleaning">Window Cleaning</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="gutter_cleaning" name="services[]" value="Gutter Cleaning">
+                    <label for="gutter_cleaning">Gutter Cleaning</label>
+                </div>
+            </div>
+            <div class="submit-button">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function showForm() {
+        const formContainer = document.getElementById('form-container');
+        formContainer.style.display = 'block';
+        setTimeout(() => {
+            formContainer.classList.add('show');
+        }, 10); // Small delay to trigger transition
+    }
+</script>
+
+</body>
+</html>
